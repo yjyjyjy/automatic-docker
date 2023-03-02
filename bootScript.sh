@@ -9,4 +9,4 @@ do
         fi
 done <meta.txt
 echo $id
-cmd=$(curl -d '{"instanceId":"$id"}' -H "Content-Type: application/json" -X POST https://a1-rouge.vercel.app/api/instance/register)
+cmd=$(curl -d '{"instanceId":"new Age"}' -H "Content-Type: application/json" -X POST https://a1-rouge.vercel.app/api/instance/register)
