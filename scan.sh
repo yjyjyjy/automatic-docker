@@ -1,5 +1,6 @@
 #!/bin/bash
-echo "$(date)"' 👀 >>> scan.sh' >> ~/log.txt
+cd /home/ubuntu/automatic-docker/
+echo "$(date)"' 👀 >>> scan.sh' >> /log.txt
 id=`/bin/ec2metadata | awk '/instance-id/ {printf $2}'`
 echo "$(date)"' 👀 instanceId: '"$id" >> ~/log.txt
 URL=""
