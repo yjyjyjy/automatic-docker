@@ -12,7 +12,7 @@ do
   if [ "$URL" != "" ]
   then
     echo "$(date)"' 👀 URL: '"$URL" >> /home/ubuntu/log.txt
-    cmd=$(curl -d '{"gradioLink":"'"$URL"'", "ip":"'"$ip"'"}' -H "Content-Type: application/json" -X POST https://a1-rouge.vercel.app/api/instance/$id)
+    cmd=$(curl -v -d '{"gradioLink":"'"$URL"'", "ip":"'"$ip"'"}' -H "Content-Type: application/json" -X PUT https://a1-rouge.vercel.app/api/instance/$id)
     break
   else
     sleep 1
