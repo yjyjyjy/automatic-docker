@@ -94,4 +94,4 @@ WORKDIR ${ROOT}
 ENV CLI_ARGS=""
 EXPOSE 7860
 ENTRYPOINT ["/docker/entrypoint.sh"]
-CMD python -u webui.py --listen --port 7860 --share --api ${CLI_ARGS}
+CMD python -u webui.py --listen --port 7860 --share ${CLI_ARGS}
