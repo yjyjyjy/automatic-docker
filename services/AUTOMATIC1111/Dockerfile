@@ -92,6 +92,14 @@ mv ${ROOT}/style.css ${ROOT}/user.css
 sed -i 's/in_app_dir = .*/in_app_dir = True/g' /usr/local/lib/python3.10/site-packages/gradio/routes.py
 EOF
 
+RUN --mount=type=bind,source=/home/ubuntu/data,target=/data/
+RUN --mount=type=bind,source=/home/ubuntu/models,target=/models/
+RUN sudo mount -t efs -o tls fs-08cbc463108e7fac0:/ /models
+RUN sudo mount -t efs -o tls fs-055e023b2709ca15f:/ /data
+RUN sudo chmod 777 data
+RUN sudo chmod 777 models
+RUN echo dockertest >>/data/test.txt
+
 WORKDIR ${ROOT}
 ENV CLI_ARGS=""
 EXPOSE 7860
