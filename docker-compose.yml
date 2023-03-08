@@ -33,8 +33,11 @@ services:
       - CLI_ARGS=--allow-code --medvram --xformers --enable-insecure-extension-access
     volumes:
       - type: bind
-        source: /home/ubuntu/data
-        target: /data
+        source: /home/ubuntu/preload_model_vol
+        target: /preload_model_vol
+      - type: bind
+        source: /home/ubuntu/personal_vol
+        target: /personal_vol
 
   auto-cpu:
     <<: *automatic
