@@ -31,6 +31,10 @@ services:
     image: sd-auto:47
     environment:
       - CLI_ARGS=--allow-code --medvram --xformers --enable-insecure-extension-access
+    volumes:
+      - type: bind
+        source: /home/ubuntu/data
+        target: /data
 
   auto-cpu:
     <<: *automatic
