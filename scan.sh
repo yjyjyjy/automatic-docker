@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /home/ubuntu/automatic-docker/
-echo "$(date)" "$(USER)"' 👀 >>> scan.sh' >> /home/ubuntu/log.txt
+echo "$(date)": 😃 "$USER"' 👀 >>> scan.sh' >> /home/ubuntu/log.txt
 id=`/bin/ec2metadata | awk '/instance-id/ {printf $2}'`
 ip=`/bin/ec2metadata | awk '/public-ipv4/ {printf $2}'`
 
